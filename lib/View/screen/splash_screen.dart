@@ -3,7 +3,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:auto_tires/View/consts/colors.dart';
 import 'package:auto_tires/View/consts/strings.dart';
 import 'package:auto_tires/View/consts/styles.dart';
-import 'package:auto_tires/View/screen/registration_screen.dart';
+import 'package:auto_tires/View/screen/authorization_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -52,7 +52,7 @@ class SplashScreen extends StatelessWidget {
           ),
         ],
       ),
-      nextScreen: const RegistrationScreen(),
+      nextScreen: const AuthorizationScreen(),
     );
   }
 }
