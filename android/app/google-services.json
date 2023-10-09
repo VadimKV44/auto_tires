@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "742905066821",
+    "project_id": "auto-tires-d4dc0",
+    "storage_bucket": "auto-tires-d4dc0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742905066821:android:93b45698906e46662f7a2c",
+        "android_client_info": {
+          "package_name": "com.example.auto_tires"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVqg5UEruAIpONkNWXd13a-My1JAbkc58"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

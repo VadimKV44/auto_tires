@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAO4fhTTdmsyazfQaS-ccY19AWMQUAlySw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>742905066821</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.autoTires</string>
+	<key>PROJECT_ID</key>
+	<string>auto-tires-d4dc0</string>
+	<key>STORAGE_BUCKET</key>
+	<string>auto-tires-d4dc0.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:742905066821:ios:3b1ffb702d9335f42f7a2c</string>
+</dict>
+</plist>

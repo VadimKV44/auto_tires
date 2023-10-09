@@ -1,3 +1,4 @@
+import 'package:auto_tires/Services/firebase_services/firebase_auth_service.dart';
 import 'package:auto_tires/View/consts/colors.dart';
 import 'package:auto_tires/View/consts/strings.dart';
 import 'package:auto_tires/View/consts/styles.dart';
@@ -6,6 +7,8 @@ import 'package:auto_tires/View/widgets/custom_button_widget.dart';
 import 'package:auto_tires/View/widgets/custom_text_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});
@@ -25,7 +28,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     _smsController.dispose();
   }
 
+  MaskTextInputFormatter maskFormatter = MaskTextInputFormatter(
+    mask: '+# (###) ### ## ##',
+    type: MaskAutoCompletionType.lazy,
+  );
+
   bool iconButtonActive = false;
+
+  FirebaseAuthentication firebaseAuthentication = FirebaseAuthentication();
 
   @override
   Widget build(BuildContext context) {
@@ -50,10 +60,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 controller: _phoneController,
                 labelText: Strings.phoneNumber,
                 inputFormatters: [
-                  MaskTextInputFormatter(
-                    mask: '+# (###) ### ## ##',
-                    type: MaskAutoCompletionType.lazy,
-                  ),
+                  maskFormatter,
                 ],
               ),
             ),
@@ -63,7 +70,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 75.0),
                   child: CustomButtonWidget(
-                    onTap: () {},
+                    onTap: () {
+                      if (_phoneController.text.isNotEmpty) {
+                        firebaseAuthentication.phoneAuthentication('+${maskFormatter.getUnmaskedText()}');
+                      }
+                    },
                     buttonText: Strings.sendSMSCode,
                     buttonWidth: double.infinity,
                   ),
@@ -105,7 +116,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 75.0),
               child: CustomButtonWidget(
-                onTap: () {},
+                onTap: () async {
+                  if (_smsController.text.isNotEmpty) {
+                    var isReg = await firebaseAuthentication.verifyOTP(_smsController.text.trim());
+                    print('||||||||||||||||||||||||||||||||||||||||||||||||||||');
+                    print(isReg);
+                    print('||||||||||||||||||||||||||||||||||||||||||||||||||||');
+                  }
+                },
                 buttonText: Strings.further,
                 buttonWidth: double.infinity,
               ),
