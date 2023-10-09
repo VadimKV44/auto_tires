@@ -8,4 +8,7 @@ class Strings {
   static const String sendSMSCode = "Выслать SMS-код";
   static const String resend = "Выслать повторно";
   static const String further = "Далее";
+  static const String pass = "Пароль";
+  static const String logInToYourAccount = "Вход в аккаунт";
+  static const String forgotYourPassword = "Забыли пароль?";
 }
